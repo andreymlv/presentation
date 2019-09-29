@@ -1,0 +1,32 @@
+% для экранов 16:9 оставить:
+\documentclass[aspectratio=169, 11pt]{beamer}
+
+% для экранов 4:3 оставить:
+% \documentclass[11pt]{beamer}
+
+% Редактируем: конфигурация, личные настройки: имя, название предмета и пр. для титульной страницы и метаданных документа здесь
+\include{config}
+
+% Не редактируем: используемые пакеты
+\include{settings/packages}
+
+% Не редактируем: параметры используемых пакетов и не только
+\include{settings/preferences}
+
+% водяной знак для обозначения статуса документа
+% \newwatermark[allpages,color=red!5,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
+\author[\studentname]{\studentname}
+\title[\docname]{\docname}
+\date{\the\year} 
+\begin{document}
+
+% Не редактируем: Титульная страница (формируется автоматически из заданной конфигурации)
+\include{templates/titlepage.tex}
+
+% Редактируем: всё остальное: вступление, др. этапы, заключение, приложение
+\include{content}
+
+% Не редактируем: Страница библиографии (формируется автоматически из книжек, указанных в refs.bib и пометок \cite{имя_источника} в тексте)
+\include{templates/bib-page}
+
+\end{document}
