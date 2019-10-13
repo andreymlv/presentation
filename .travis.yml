@@ -1,17 +1,17 @@
-dist: bionic
+language: r
 sudo: true
 
 install:
-  - sudo apt-get install texlive-full
-  - tlmgr install lstfiracode
+  - sudo apt-get install texlive-lang-cyrillic texlive-xetex texlive-latex-extra texlive-fonts-extra texlive-math-extra fonts-cmu
+  - sudo pip install pygments
+  - tlmgr install lstfiracode polyglossia minted latexmk fvextra ifplatform cancel xwatermark catoptions ltxkeys
 
 script: 
   - make
 
 deploy:
   provider: releases
-  api_key: 
-    secure: "${GH_TOKEN}"
+  github_token: $GH_TOKEN
   file: "main.pdf"
   skip_cleanup: true
   on:
