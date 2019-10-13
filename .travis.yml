@@ -14,4 +14,4 @@ deploy:
   file: "main.pdf"
   skip_cleanup: true
   on:
-    repo: tiulpin/PTL
+    repo: iamm-templates/presentation-template
