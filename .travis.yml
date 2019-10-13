@@ -1,9 +1,8 @@
-language: r
+dist: bionic
 sudo: true
 
 install:
-  - sudo apt-get install latexmk
-  - tlmgr install fontawesome tex-gyre moderncv
+  - sudo apt install texlive-full
 
 script: 
   - latexmk -interaction=nonstopmode main.tex
