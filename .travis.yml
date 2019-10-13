@@ -1,34 +1,22 @@
-language: generic
+# initialization stage: we use the R VM because it contains texlive
+language: r
+sudo: true
 
-sudo: required
-
-dist: trusty
-
-services:
-  - docker
-
+# configuration stage: we need additional packages to build the CV
 install:
-  - docker pull lamtev/latex
+  - sudo apt-get install latexmk
+  - tlmgr install fontawesome tex-gyre moderncv
 
-matrix:
-  include:
-    - env: LATEX_TEMPLATE="bachelor_thesis"
-    - env: LATEX_TEMPLATE="master_thesis"
-    - env: LATEX_TEMPLATE="coursework"
-    - env: LATEX_TEMPLATE="presentation"
-    - env: LATEX_TEMPLATE="report"
+# building stage: we build our PDF with the help of pdflatex
+script: 
+  - latexmk -pdf -interaction=nonstopmode main.tex
 
-script:
-  - chmod +x travis_build.sh
-  - docker run -v $TRAVIS_BUILD_DIR:/latex_templates lamtev/latex /bin/bash -c " cd latex_templates && . ./travis_build.sh && build_latex_template $LATEX_TEMPLATE "
-
-before_deploy:
-  - sudo chmod 777 ${TRAVIS_BUILD_DIR}/${LATEX_TEMPLATE}/${LATEX_TEMPLATE}.pdf
-
+# deployment stage: we deploy the CV to the repo, don't forget to get your OAuth GitHub token
 deploy:
   provider: releases
-  api_key: "$GITHUB_DEPLOY_TOKEN"
-  file: ${TRAVIS_BUILD_DIR}/${LATEX_TEMPLATE}/${LATEX_TEMPLATE}.pdf
+  api_key: 
+    secure: "${GH_TOKEN}"
+  file: "main.pdf"
   skip_cleanup: true
   on:
-    tags: true
+    repo: iamm-templates/presentation-template
