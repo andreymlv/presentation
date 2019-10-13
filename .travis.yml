@@ -2,10 +2,10 @@ dist: bionic
 sudo: true
 
 install:
-  - sudo apt install texlive-full
+  - sudo apt-get install texlive-full
 
 script: 
-  - latexmk -interaction=nonstopmode main.tex
+  - make
 
 deploy:
   provider: releases
@@ -14,4 +14,4 @@ deploy:
   file: "main.pdf"
   skip_cleanup: true
   on:
-    repo: iamm-templates/presentation-template
+    repo: tiulpin/PTL
