@@ -1,3 +1,7 @@
+% настройки polyglossia
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+
 % перечень использованных источников
 \addbibresource{refs.bib}
 
@@ -17,6 +21,9 @@
   \renewcommand{\listingscaption}{Программа}
 }
 
+% основной шрифт документа
+\setmainfont{CMU Serif}
+
 % настройка ссылок и метаданных документа
 \hypersetup{unicode=true,colorlinks=true,linkcolor=red,citecolor=green,filecolor=magenta,urlcolor=cyan,        		       
     pdftitle={\docname},   	    
@@ -27,9 +34,14 @@
     pdfkeywords={\docname}
 }
 
-% настройка подсветки кода и окружения для minted
-\usemintedstyle{manni}
+% настройка подсветки кода и окружения для листингов
+\usemintedstyle{colorful}
 \newenvironment{code}{\captionsetup{type=listing}}{}
+
+% шрифт для листингов с лигатурами
+\setmonofont{[FiraCode-Regular.otf]}[
+  Contextuals=Alternate  % Activate the calt feature
+]
 
 % путь к каталогу с рисунками
 \graphicspath{{fig/}}
