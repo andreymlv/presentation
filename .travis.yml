@@ -1,17 +1,13 @@
-# initialization stage: we use the R VM because it contains texlive
 language: r
 sudo: true
 
-# configuration stage: we need additional packages to build the CV
 install:
   - sudo apt-get install latexmk
   - tlmgr install fontawesome tex-gyre moderncv
 
-# building stage: we build our PDF with the help of pdflatex
 script: 
-  - latexmk -pdf -interaction=nonstopmode main.tex
+  - latexmk -interaction=nonstopmode main.tex
 
-# deployment stage: we deploy the CV to the repo, don't forget to get your OAuth GitHub token
 deploy:
   provider: releases
   api_key: 
