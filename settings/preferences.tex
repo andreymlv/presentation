@@ -1,6 +1,23 @@
+% настройка метаданных документа
+\author[\studentname]{\studentname}
+\title[\docname]{\docname}
+\date{\the\year} 
+
 % настройки polyglossia
 \setdefaultlanguage{russian}
 \setotherlanguage{english}
+
+% локализация
+\graphicspath{ {} }
+\addto\captionsrussian{
+  \renewcommand{\partname}{Глава}
+  \renewcommand{\contentsname}{Содержание}
+  \renewcommand{\figurename}{Рисунок}
+  \renewcommand{\listingscaption}{Листинг}
+}
+
+% основной шрифт документа
+\setmainfont{CMU Serif}
 
 % перечень использованных источников
 \addbibresource{refs.bib}
@@ -9,20 +26,6 @@
 \usetheme{metropolis}
 \usecolortheme{seagull}
 \beamertemplatenavigationsymbolsempty
-
-% локализация
-\graphicspath{ {} }
-\addto\captionsrussian{
-  \renewcommand{\partname}{Глава}
-  \renewcommand{\contentsname}{Содержание}
-  \renewcommand{\refname}{Перечень использованных источников}
-  \renewcommand{\bibname}{Перечень использованных источников}
-  \renewcommand{\figurename}{Рисунок}
-  \renewcommand{\listingscaption}{Листинг}
-}
-
-% основной шрифт документа
-\setmainfont{CMU Serif}
 
 % настройка ссылок и метаданных документа
 \hypersetup{unicode=true,colorlinks=true,linkcolor=red,citecolor=green,filecolor=magenta,urlcolor=cyan,        		       

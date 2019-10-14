@@ -1,8 +1,7 @@
-% для экранов 16:9 оставить:
-\documentclass[aspectratio=169, 11pt]{beamer}
+% XeLaTeX document
+\documentclass[aspectratio=169, 11pt]{beamer} % для экранов 16:9 оставить
 
-% для экранов 4:3 оставить:
-% \documentclass[11pt]{beamer}
+% \documentclass[11pt]{beamer} % для экранов 4:3 оставить
 
 % Редактируем: конфигурация, личные настройки: имя, название предмета и пр. для титульной страницы и метаданных документа здесь
 \include{config}
@@ -15,9 +14,6 @@
 
 % водяной знак для обозначения статуса документа
 % \newwatermark[allpages,color=red!5,angle=45,scale=3,xpos=0,ypos=0]{DRAFT}
-\author[\studentname]{\studentname}
-\title[\docname]{\docname}
-\date{\the\year} 
 \begin{document}
 
 % Не редактируем: Титульная страница (формируется автоматически из заданной конфигурации)
