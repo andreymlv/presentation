@@ -14,7 +14,7 @@
 #### Сборка локально
 Понадобится Docker. 
 ```
-wget https://github.com/iamm-templates/latex-docker/raw/master/latexdockercmd.sh -O latexdockercmd.sh
+wget https://github.com/iamm-templates/xelatex-docker/raw/master/latexdockercmd.sh -O latexdockercmd.sh
 chmod a+x latexdockercmd.sh
 ./latexdockercmd.sh latexmk -cd -f -interaction=batchmode -pdf main.tex
 ```
