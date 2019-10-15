@@ -10,7 +10,7 @@ branches:
 script: 
   - wget https://github.com/tiulpin/xelatex-docker/raw/master/latexdockercmd.sh -O latexdockercmd.sh
   - chmod a+x latexdockercmd.sh
-  - ./latexdockercmd.sh latexmk -xelatex -shell-escape -cd -f -interaction=nonstopmode -pdf main.tex
+  - ./latexdockercmd.sh latexmk -cd -f -interaction=nonstopmode -pdf main.tex
   - mv main.pdf presentation-template.pdf
 deploy:
   provider: releases
