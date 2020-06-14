@@ -20,4 +20,4 @@ deploy:
   file: "presentation-template.pdf"
   skip_cleanup: true
   on:
-    repo: iamm-templates/presentation-template
+    repo: polytechnic-templates/presentation-template
