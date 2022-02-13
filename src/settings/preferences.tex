@@ -1,0 +1,63 @@
+% настройки polyglossia
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+
+% локализация
+\graphicspath{ {} }
+\addto\captionsrussian{
+	\renewcommand{\partname}{Глава}
+	\renewcommand{\contentsname}{Содержание}
+	\renewcommand{\figurename}{Рисунок}
+	\renewcommand{\lstlistingname}{Листинг}
+}
+
+% основной шрифт документа
+\setmainfont{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{Fira Code}
+\newfontfamily{\cyrillicfonttt}{Fira Code}
+
+% перечень использованных источников
+\addbibresource{refs.bib}
+
+% оформление презентации
+\usetheme{metropolis}
+\usecolortheme{seagull}
+\beamertemplatenavigationsymbolsempty
+
+% настройка ссылок и метаданных документа
+\hypersetup{unicode=true,colorlinks=true,linkcolor=red,citecolor=green,filecolor=magenta,urlcolor=cyan,
+	pdftitle={\docname},
+	pdfauthor={\studentname},
+	pdfsubject={\docname},
+	pdfcreator={\studentname},
+	pdfproducer={XeLaTeX},
+	pdfkeywords={\docname}
+}
+
+% настройка подсветки кода и окружения для листингов
+\newenvironment{code}{\captionsetup{type=lstlisting}}{}
+
+% путь к каталогу с рисунками
+\graphicspath{{fig/}}
+
+% настоящее матожидание
+\newcommand{\MExpect}{\mathsf{M}}
+
+% объявили оператор!
+\DeclareMathOperator{\sgn}{\mathop{sgn}}
+
+% стиль для листинга
+\lstdefinestyle{mystyle}{
+	keywordstyle=\color{magenta},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2
+}
+\lstset{style=mystyle}

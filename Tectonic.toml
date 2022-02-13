@@ -1,0 +1,7 @@
+[doc]
+name = 'xetex-template'
+bundle = 'https://relay.fullyjustified.net/default_bundle.tar'
+
+[[output]]
+name = 'default'
+type = 'pdf'
